@@ -56,7 +56,9 @@ for item in ResultSet:
             data = getData(fixTickerSymbol(item.symbol, "."))
         else:   
             data = getData(item.symbol)
-        if hasattr(data.branding, 'icon_url'):
+        if 'None' in str(data.branding.icon_url):
+            print('No URL for ' + (data.ticker_root))
+        else:
             if hasattr(data, 'ticker_root'):
                 filename = str(data.ticker_root) + ".jpeg"
                 if os.path.exists(filename):
@@ -73,22 +75,8 @@ for item in ResultSet:
                         download_icon(url, filename)
                     except:
                         print('download failed')
-        '''
-        if str(data.branding.icon_url) != 'None':
-            url = str(data.branding.icon_url) + "?apiKey=h8MBNalegZa122f0UA4_EpSCIwnC8D8p"
-        else:
-            print('active but no url')
-        print(url)
-        if url == "None":
-            print("//////////////////////")
-            print(data)
-            print("no url")
-            print("//////////////////////")
-        else: 
-            print(data)
-            filename = str(data.ticker_root) + ".jpeg"
-            download_icon(url, filename)
-        '''
+            else:
+                print("Failure 1")
     else:
         print(str(item.symbol) + " is inactive")
         
