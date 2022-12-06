@@ -62,7 +62,7 @@ for item in ResultSet:
                 if os.path.exists(filename):
                     print("File already exists, skipping")
                 else: 
-                    print("Filename: "+ filename)
+                    print("Requesting: "+ filename)
                     print(data)
                     print('/////////////////////////')
                     print("Icon URL: ")
