@@ -69,10 +69,10 @@ for item in ResultSet:
                     print(data.branding.icon_url)
                     url = str(data.branding.icon_url) + "?apiKey=h8MBNalegZa122f0UA4_EpSCIwnC8D8p"
                     #print(url)
-                try:
-                    download_icon(url, filename)
-                except:
-                    print('download failed')
+                    try:
+                        download_icon(url, filename)
+                    except:
+                        print('download failed')
         '''
         if str(data.branding.icon_url) != 'None':
             url = str(data.branding.icon_url) + "?apiKey=h8MBNalegZa122f0UA4_EpSCIwnC8D8p"
