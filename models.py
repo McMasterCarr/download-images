@@ -23,14 +23,43 @@ class Asset(db.Model):
     shortable = db.Column(db.Integer)
     easy_to_borrow = db.Column(db.Integer)
     fractionable = db.Column(db.Integer)
-    '''address1 = 
-    address2 = 
-    city = 
-    state = 
-    country = 
-    postal_code = 
-    icon_url = '''
-
+    
+    address1 = db.Column(db.String(100))
+    address2 = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    state = db.Column(db.String(100))
+    country = db.Column(db.String(100))
+    postal_code = db.Column(db.Integer)
+    icon_url = db.Column(db.String(100))
+    logo_url = db.Column(db.String(100))
+    accent_color = db.Column(db.String(100))
+    light_color = db.Column(db.String(100))
+    dark_color = db.Column(db.String(100))
+    cik = db.Column(db.String(100))
+    composite_figi = db.Column(db.String(100))
+    currency_name = db.Column(db.String(100)) 
+    currency_symbol= db.Column(db.String(100)) 
+    base_currency_name= db.Column(db.String(100))
+    base_currency_symbol= db.Column(db.String(100))
+    delisted_utc = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    ticker_root = db.Column(db.String(10)) 
+    homepage_url = db.Column(db.String(100))
+    list_date = db.Column(db.String(100)) 
+    locale= db.Column(db.String(10))
+    market= db.Column(db.String(100))
+    market_cap= db.Column(db.String(100))
+    name= db.Column(db.String(100))
+    phone_number= db.Column(db.String(100))
+    primary_exchange=db.Column(db.String(100))
+    share_class_figi=db.Column(db.String(100))
+    share_class_shares_outstanding=db.Column(db.String(100))
+    sic_code=db.Column(db.String(100))
+    sic_description=db.Column(db.String(100))
+    ticker=db.Column(db.String(100))
+    total_employees=db.Column(db.String(100))
+    type=db.Column(db.String(100))
+    weighted_shares_outstanding=db.Column(db.String(100))
 
 class Social(db.Model):
     id = db.Column(db.Integer, primary_key=True)
